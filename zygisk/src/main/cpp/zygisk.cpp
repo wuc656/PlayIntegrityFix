@@ -233,7 +233,8 @@ public:
 
         std::string_view vDir(dir);
         bool isGms =
-                vDir.ends_with("/com.google.android.gms") || vDir.ends_with("/com.android.vending");
+                //vDir.ends_with("/com.google.android.gms") || vDir.ends_with("/com.android.vending");
+                vDir.ends_with("/com.google.android.gms");
 
         if (!isGms)
             return;
@@ -242,9 +243,10 @@ public:
 
         std::string_view vName(name);
         isGmsUnstable = vName == DROIDGUARD_PACKAGE;
-        isVending = vName == VENDING_PACKAGE;
+        //isVending = vName == VENDING_PACKAGE;
 
-        if (!isGmsUnstable && !isVending) {
+        //if (!isGmsUnstable && !isVending) {
+        if (!isGmsUnstable) {
             api->setOption(DLCLOSE_MODULE_LIBRARY);
             return;
         }
