@@ -27,7 +27,7 @@ done
 resetprop_if_diff ro.secureboot.lockstate locked
 # avoid breaking Realme fingerprint scanners
 resetprop_if_diff ro.boot.flash.locked 1
-resetprop_if_diff ro.boot.realme.lockstate 1
+#resetprop_if_diff ro.boot.realme.lockstate 1
 # avoid breaking Oppo fingerprint scanners
 resetprop_if_diff ro.boot.vbmeta.device_state locked
 # avoid breaking OnePlus display modes/fingerprint scanners
